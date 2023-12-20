@@ -1,0 +1,41 @@
+Завдання №1
+
+#include <stdio.h>
+#include <vector>
+int main() {
+    float chuslo1, chuslo2;
+    printf("Vedite chuslo 1- \n");
+    scanf_s("%f", &chuslo1);
+    printf("Vedite chuslo 2-\n");
+    scanf_s("%f", &chuslo2);
+
+    if (chuslo1 > chuslo2) {
+        printf("chuslo1>chuslo2 %f\n", chuslo1);
+    }
+    else {
+        printf("Obudva chusla %f, %f\n", chuslo1, chuslo2);
+    }
+    float chuslo3;
+    printf("vedite chuslo 3-\n ");
+    scanf_s("%f", &chuslo3);
+    float min_value = (chuslo1 < chuslo2) ? ((chuslo1 < chuslo3) ? chuslo1 : chuslo3) : ((chuslo2 < chuslo3) ? chuslo2 : chuslo3);
+    printf("Naimenshe chuslo  %.2f\n", min_value);
+    std::vector<int> array;
+    printf("vedite elementu masiva cheres probel (Vvedite ne chuslo dla konca procesa): ");
+    int input;
+    while (scanf_s("%d", &input) == 1) {
+        array.push_back(input);
+    }
+    for (int i = 0; i < array.size(); ++i) {
+        if (array[i] % 2 == 0) {
+            array[i] = 0;
+        }
+    }
+    printf("Masiv posle obnelenia ");
+    for (int i : array) {
+        printf("%d ", i);
+    }
+    printf("\n");
+    return 0;
+}
+
